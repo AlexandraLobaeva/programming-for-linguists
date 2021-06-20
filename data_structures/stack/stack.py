@@ -12,8 +12,9 @@ class Stack:
     Stack Data Structure
     """
     # pylint: disable=missing-module-docstring
-    def __init__(self, data: Iterable = None):
+    def __init__(self, max_size=None, data: Iterable = None):
         self.data = list(data) if data else []
+        self.max_size = max_size
 
     def push(self, element):
         """
