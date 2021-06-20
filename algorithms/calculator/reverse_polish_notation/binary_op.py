@@ -43,27 +43,36 @@ class Plus(BinaryOp):
     """
     Implementation of operator +
     """
-
+    priority = 3
+    operator = '+'
 
 class Minus(BinaryOp):
     """
     Implementation of operator -
     """
+    priority = 3
+    operator = '-'
 
 
 class Multiplier(BinaryOp):
     """
     Implementation of operator *
     """
+    priority = 2
+    operator = '*'
 
 
 class Divider(BinaryOp):
     """
     Implementation of operator /
     """
+    priority = 2
+    operator = '/'
 
 
 class Power(BinaryOp):
     """
     Implementation of operator ^
     """
+    priority = 1
+    operator = '^'
