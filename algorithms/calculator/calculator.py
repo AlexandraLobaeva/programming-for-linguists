@@ -22,3 +22,18 @@ class ReversePolishNotationCalculator:
         :param rpn_expression: expression in Reverse Polish Notation Format
         :return: result of the expression
         """
+                for el in rpn_expression:
+            if isinstance(el, Digit):
+                self.stack.push(el)
+                continue
+            begin = self.stack.top()
+            self.stack.pop()
+            end = self.stack.top()
+            self.stack.pop()
+            result = el(begin, end)
+            self.stack.push(result)
+        res = self.stack.top()
+        self.stack.pop()
+        return res
+
+    print(ReversePolishNotationCalculator().calculate(ReversePolishNotationConverter().convert('2*(2+2)')))
